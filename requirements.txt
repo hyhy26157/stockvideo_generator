@@ -1,0 +1,11 @@
+moviepy==1.0.3
+openai-whisper
+pandas==2.1.1
+nltk
+python-pexels
+pyyaml
+openai
+transformers
+opencv-python
+sentencepiece==0.1.99
+protobuf==4.24.4

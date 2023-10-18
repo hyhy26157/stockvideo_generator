@@ -1,0 +1,53 @@
+#video setting / #transcription summarisation config
+speech_file: "./speech.mp3"
+gender: 'female' #to get male or female bias when doing video query, can leave it as empty string. (e.g. <gender> <emotion>). Technically, you can try out other combination (e.g. child) to get the best result for you. Emotion are generated based on the sentiment. 
+word_per_row: 3 #The text overlay on the video depend on number of words. You can reduce text width and font size to get more words into the screen. 3 has been optimised for vertical videos.
+num_char_prompt: 40 #shared config between video and transcript summarisation
+stockvideo_framerate_set: 24
+summarisation_engine: "t5" #t5 free from hugging face, check emotions. openai, paid precise summarisation.
+emotion_change_frequency: 5 # (for t5 only) to get video from differnet query with similar emotion by changing the query word every 10 seconds by replacing similar emotion word in the query.
+
+#video text setting
+stockvideo_text_width: 25 #adjust the video text width
+stockvideo_fontsize: 60 #adjust the video text font size
+
+
+#download video config
+download_video_size: 'small' #hd is small, full hd is medium, 4k is high, pexel filter
+download_video_orientation: 'portrait' #landscape, portrait or square. pexel filter  NOTE: Make sure you change the width and height
+download_video_video_per_page: 80 #max number of video to download per page is 80, pexel filter
+download_video_brightness: 250 #get video average brightness. default 200, custom filter
+download_video_video_quality: 'hd' #hd (720,1280 and above) sd (below 720,1280) , custom filter
+download_video_width: 720  #width of video
+download_video_height: 1280  #width of height
+concurrent_workers: 8 #number of concurrent works 
+no_of_query: 8 #number of query to ping pexel
+
+#download video program settings
+retries: 3 #number of retries on pexel video link
+download_type: 'keywords' #keyword use whatever in pexels. collection use whatever stored in a profile.
+
+#video and text combining config
+Video_Text_Combine_video_type: "stockvideo" #trailer or stockvideo - combining footages method
+stockvideo_download_type: 'keywords' #for now, only keywords are allowed.
+video_fadein: 1  #video fade in duration
+video_fadeout: 0.5 #video fade out duration
+video_fadein_color: 1 #black
+video_fadeout_color: 1 #black
+video_writing_threads_number: 8 #number of concurrent video writting. adjust this based on number of CPU core you have
+video_codec: "libx264" #video codec written, mp4
+video_black_overlay: 0.5 #lower is darker. 1 is normal
+
+#temp folder names
+final_clip_folder: './final_clip/'
+adjusted_frame_clip_folder: './adjusted_framerate_video_folder/'
+stock_videos_folder: './'
+
+#json file names
+speech_transcript_json_raw: './output.json'
+speech_transcript_json_v0: './summary.json'
+speech_transcript_json_v1: './summary_stockvideo.json'
+speech_transcript_json_v2: './summary_stockvideotext.json'
+
+
+
