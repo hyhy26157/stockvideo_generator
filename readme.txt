@@ -15,3 +15,5 @@ If you want to adjust the video parameters, you can use the config.yaml file
 
 *Note: By default, video generated are in Shorts format bias towards female appearance. You can change the parameters, depend on your requirement. Read up on pexels API for more information.
 
+Example Output: https://www.youtube.com/@Your_Daily_Boost238/shorts
+
